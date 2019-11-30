@@ -2,12 +2,31 @@
 <html>
     <head>
         <canvas id="myCanvas"></canvas>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <script type="text/javascript" src="index.js"></script>
+        <script>
+            function pegar_entrantes(data) {
+                    if (window.XMLHttpRequest) {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        // code for IE6, IE5
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
 
+                    xmlhttp.open("GET","index.php?q="+data,true);
+                    xmlhttp.send();
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </head>
     <body>
             <script>
+                let hoje = new Date();
+                let dia_1 = (hoje.getDate() - 4) + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear()
+                let dia_2 = (hoje.getDate() - 3) + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear()
+                let dia_3 = (hoje.getDate() - 2) + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear()
+                let dia_4 = (hoje.getDate() - 1) + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear()
+                let dia_5 = hoje.getDate() + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear()
+
                 let ctx = document.getElementById('myCanvas').getContext('2d');
 
                 let chart = new Chart(ctx, {
@@ -18,11 +37,11 @@
                             label: 'Entrantes',
                             backgroundColor: 'rgb(255, 99, 132)',
                             borderColor: 'rgb(255, 99, 132)',
-                            data: [entrantes_dia_1,
-                                entrantes_dia_2,
-                                entrantes_dia_3,
-                                entrantes_dia_4,
-                                entrantes_dia_5]
+                            data: [pegar_entrantes('2019-11-30'),
+                                   pegar_entrantes('2019-11-29'),
+                                   pegar_entrantes('2019-11-28'),
+                                   pegar_entrantes('2019-11-27'),
+                                  ]
                         }]
                     }
                 })

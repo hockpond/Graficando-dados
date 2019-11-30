@@ -26,14 +26,14 @@ async function contar_entrantes(dia, mes, ano) {
             data_de_entrada: ano + '-' + mes + '-' + dia
         }
     })
-    return(dados.count)
+    console.log(dados.count)
 }
 let hoje = new Date();
 let entrantes_dia_1 = contar_entrantes(hoje.getDate() - 4, hoje.getMonth() + 1, hoje.getFullYear())
 let entrantes_dia_2 = contar_entrantes(hoje.getDate() - 3, hoje.getMonth() + 1, hoje.getFullYear())
 let entrantes_dia_3 = contar_entrantes(hoje.getDate() - 2, hoje.getMonth() + 1, hoje.getFullYear())
 let entrantes_dia_4 = contar_entrantes(hoje.getDate() - 1, hoje.getMonth() + 1, hoje.getFullYear())
-let entrantes_dia_5 = contar_entrantes(hoje.getDate() - 4, hoje.getMonth() + 1, hoje.getFullYear())
+let entrantes_dia_5 = contar_entrantes(hoje.getDate(), hoje.getMonth() + 1, hoje.getFullYear())
 
 let dia_1 = (hoje.getDate() - 4) + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear()
 let dia_2 = (hoje.getDate() - 3) + '/' + (hoje.getMonth()+1) + '/' + hoje.getFullYear()
