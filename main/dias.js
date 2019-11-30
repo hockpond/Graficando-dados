@@ -31,8 +31,8 @@ let labelX = []
 index = dias.indexOf(diaSelecionado + '/' + mesSelecionado + '/' + anoSelecionado)
 
 //Preenchendo labelX
-for(let i = 0; i < 4; i++) {
-    if(index - (i - 2) <= dias.length - 1 && index - (i - 2) >= 0) {
-        labelX[i] = dias[index - (i - 2)]
-    }
-}
+labelX[0] = dias[index - 2]
+labelX[1] = dias[index - 1]
+labelX[2] = dias[index]
+labelX[3] = dias[index + 1]
+labelX[4] = dias[index + 2]
