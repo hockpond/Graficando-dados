@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <canvas id="myCanvas"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script type="text/javascript" src="index.js"></script>
+
+    </head>
+    <body>
+            <script>
+                let ctx = document.getElementById('myCanvas').getContext('2d');
+
+                let chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [dia_1, dia_2, dia_3, dia_4, dia_5],
+                        datasets: [{
+                            label: 'Entrantes',
+                            backgroundColor: 'rgb(255, 99, 132)',
+                            borderColor: 'rgb(255, 99, 132)',
+                            data: [entrantes_dia_1,
+                                entrantes_dia_2,
+                                entrantes_dia_3,
+                                entrantes_dia_4,
+                                entrantes_dia_5]
+                        }]
+                    }
+                })
+            </script>
+    </body>
+</html>
