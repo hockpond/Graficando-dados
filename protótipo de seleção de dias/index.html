@@ -13,11 +13,14 @@
             }
             function enviar() {
                 index = dias.indexOf(diaSelecionado + '/' + mesSelecionado + '/' + anoSelecionado)
-                labelX[0] = dias[index - 2]
-                labelX[1] = dias[index - 1]
-                labelX[2] = dias[index]
-                labelX[3] = dias[index + 1]
-                labelX[4] = dias[index + 2]
+                labelX[0] = dias[index - 4]
+                labelX[1] = dias[index - 3]
+                labelX[2] = dias[index - 2]
+                labelX[3] = dias[index - 1]
+                labelX[4] = dias[index]
+                labelX[5] = dias[index + 1]
+                labelX[6] = dias[index + 2]
+                labelX[7] = dias[index  + 3]
             }
         </script>
     </head>
@@ -26,15 +29,15 @@
             let dias = []
             let diaAtual = new Date()
             dias.push(diaAtual.getDate() + '/' + (diaAtual.getMonth()+1) + '/' + diaAtual.getFullYear())
-            dias.push("02/12/2019")
-            dias.push("03/12/2019")
-            dias.push("04/12/2019")
-            dias.push("05/12/2019")
             dias.push("06/12/2019")
             dias.push("07/12/2019")
             dias.push("08/12/2019")
             dias.push("09/12/2019")
             dias.push("10/12/2019")
+            dias.push("11/12/2019")
+            dias.push("12/12/2019")
+            dias.push("13/12/2019")
+            dias.push("14/12/2019")
 
             let diaSelecionado
             let mesSelecionado
